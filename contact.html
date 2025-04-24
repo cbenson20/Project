@@ -1,0 +1,90 @@
+<!--
+  Project 4 Website Deployment  
+  Name: Constance Benson  
+  Date: 2025-04-22  
+  Description:This a Contact form page with full validation for user input,including name, email, and phone number. Connected to JavaScript validation. 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+  <header id="header2">
+  <nav>
+    <a href="index.html" class="logo"><span>Constance</span></a>
+    <ul class="links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <i class='bx bx-menu' id="menu"></i>
+    <a href="contact.html" class="btn">Contact Me</a>
+  </nav>
+</header>
+  
+  <main>
+  <section id="contact">
+    <h1 class="header"><span>Contact</span></h1>
+    <form id="contactForm" action="index.html" method="post">
+      <div class="input-box">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter Your Full Name">
+        <small class="error" style="display:none; color: red;">Name is required</small>
+      </div>
+      <div class="input-box">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" placeholder="Enter Your Email">
+        <small class="error" style="display:none; color: red;">Invalid email address</small>
+      </div>
+      <div class="input-box">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="Enter Your Phone Number">
+        <small class="error" style="display:none; color: red;">Invalid phone number</small>
+      </div>
+      <div class="input-box">
+        <label for="feedback">Comments</label>
+        <input type="text" id="feedback">
+      </div>
+      <div class="btn-box">
+        <button type="submit" class="btn">Submit</button>
+        <button type="reset" class="btn">Reset</button>
+      </div>
+    </form>
+  </section>
+</main>
+  <footer id="footer1">
+    <div class="col-left">
+      <div class="col-box">
+        <i class='bx bxs-location-plus'></i>
+        <span>2485 Main Street, R2V 3J9</span>
+      </div>
+      <div class="col-box">
+        <i class='bx bx-phone'></i>
+        <span>+204 951 3234</span>
+      </div>
+      <div class="col-box">
+        <i class='bx bxs-envelope'></i>
+        <span>bensonconstance10@gmail.com</span>
+      </div>
+    </div>
+    <div class="col-right">
+      <span>About My Services</span>
+      <p>My services cover every stage of the web development process; planning, design, development, and deployment.<br>I specialize in building websites that are modern, mobile-friendly, and optimized for performance. Whether it's a simple landing page, a full website, or a custom web app, I deliver clean code and seamless user experiences.<br>Let’s work together to create something that looks great, works flawlessly, and supports your goals.</p>
+      <div class="social-icons">
+        <i class='bx bxl-instagram'></i>
+        <i class='bx bxl-linkedin'></i>
+        <i class='bx bxl-github'></i>
+      </div>
+    </div>
+  </footer>
+  <script src="web.js"></script>
+
+</body>
+</html>
