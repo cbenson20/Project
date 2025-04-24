@@ -9,17 +9,31 @@
  - Responsive menu toggle for mobile devices
 */
 
-
 /* Load Function
    Called when the DOM is fully loaded.
-   It attaches submit and reset event listeners to the contact form.
+   It attaches submit and reset event listeners to the contact form
+   and sets up the mobile menu toggle.
 */
 function load() {
+  // Contact form handling
   let form = document.getElementById("contactForm");
+  if (form) {
+    form.addEventListener("submit", validateForm);
+    form.addEventListener("reset", hideErrors);
+  }
 
-  // Attach submit and reset listeners
-  form.addEventListener("submit", validateForm);
-  form.addEventListener("reset", hideErrors); // hide errors when form is reset
+  // Mobile menu toggle setup
+  let menu = document.getElementById("menu");
+  let nav = document.querySelector(".links");
+  
+  if (menu && nav) {
+    menu.addEventListener("click", () => {
+      menu.classList.toggle('bx-x');
+      nav.classList.toggle('active');
+    });
+  } else {
+    console.error("Menu toggle elements not found - check your HTML structure");
+  }
 }
 
 /* validateForm Function
@@ -27,7 +41,6 @@ function load() {
    Uses regex to validate email and phone number format.
    Displays error messages inline below invalid fields.
 */
-
 function validateForm(e) {
   e.preventDefault();
 
@@ -81,7 +94,6 @@ function validateForm(e) {
   }
 }
 
-
 /* hideErrors Function
    Hides all validation error messages by setting display to 'none'.
 */
@@ -91,19 +103,6 @@ function hideErrors() {
     errors[i].style.display = "none";
   }
 }
-
-
-/* Menu Toggle Script
-   Allows the navigation menu to toggle on small screens.
-   Adds/removes 'active' class and changes the menu icon to 'X'.
-*/
-let menu = document.querySelector("#menu");
-let nav = document.querySelector(".links");
-
-menu.onclick = () => {
-  menu.classList.toggle('bx-x');
-  nav.classList.toggle('active');
-};
 
 // Run when document is ready
 document.addEventListener("DOMContentLoaded", load);
